@@ -42,6 +42,17 @@ client.on('message', message => {
                 member.send("❌Failed To Verify!")
             }
         }
+        
+        if (member.guild.id == '761280387057582101') {
+            try{
+                const role = member.guild.roles.cache.find(role => role.name === 'Member');
+                member.roles.add(role);
+                member.send("✅Verified!")
+            } catch(e) {
+                console.error(e);
+                member.send("❌Failed To Verify!")
+            }
+        }
     }
 });
 
