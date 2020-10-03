@@ -54,13 +54,7 @@ client.on('message', message => {
             }
         }
     } else if (command == `${PREFIX}membercount`) {
-        let em = new Discord.MessageEmbed()
-        .setTitle("Member Count")
-        .addField('Members Online',message.guild.memberCount)
-        .addField('Total Members',message.guild.members)
-        .addField('Bots',message.guild.bots);
-
-        message.channel.send(em);
+        message.channel.send(`Member Count: ${message.guild.memberCount}`);
     }
 });
 
