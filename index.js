@@ -53,7 +53,16 @@ client.on('message', message => {
                 member.send("❌Failed To Verify!")
             }
         }
+    } else if (command == `${PREFIX}membercount`) {
+        let em = new Discord.MessageEmbed()
+        .setTitle("Member Count")
+        .addField(`Members: ${message.guild.memberCount}`)
+        .addField(`Members: ${message.guild.maximumMembers}`)
+        .addField(`Members: ${message.guild.bot}`);
+
+        message.channel.send(em);
     }
 });
 
 client.login(process.env.TOKEN);
+
